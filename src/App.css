@@ -1,0 +1,82 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  
+}
+.links{
+  display:flex;
+  gap:2rem;
+  font-size:1.2rem;
+  font-weight:500;
+  align-items: center;
+  min-height: 60px;
+  background-color: navajowhite;
+  justify-content: space-around;
+  position: sticky;
+}
+body{
+  background-image: url('https://img.freepik.com/free-photo/wooden-table-with-blurred-green-nature-background_1150-38035.jpg?w=2000');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+.nextLinks{
+  display:flex;
+  gap:3rem;
+  justify-content: center;
+  align-items: center;
+}
+Link{
+  text-decoration: none;
+  color:black;
+}
+a{
+  text-decoration: none;
+  color:black;
+}
+a:hover{
+  color:blue;
+  border-bottom: 1px solid purple;
+}
+.text{
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  
+}
+.action{
+ background-color: navy;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  transition: all 100ms ease-in;
+  color: white;
+
+}
+.action:hover, .action:focus{
+  color: navy;
+  transform: scale(1.4);
+  outline: none;
+  background-color: white;
+  text-decoration: none;
+  border: none;
+}
+.paragraph{
+  margin-bottom: 2rem;
+}
+button{
+  cursor: pointer;
+  min-height: 40px;
+  width: 40px;
+  border-radius: 5px;
+}
+@media  (max-width:600px) {
+  .links{
+    display: none;
+  }
+ 
+  
+}
