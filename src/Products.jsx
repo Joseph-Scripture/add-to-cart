@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import {Link } from 'react-router'
-document.body.style.backgroundColor = '#F4E9D7'
+import { useCart } from './CartContext.jsx';
+import Nav from './Nav.jsx'
+document.body.style.backgroundColor = '#D78FEE'
 
 import  './products.css'
 document.body.style.backgroundImage = 'none';
@@ -8,6 +10,7 @@ const ProductCatalogue = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const { addToCart } = useCart();
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products', { mode: 'cors' })
@@ -38,20 +41,8 @@ const ProductCatalogue = () => {
 
     return (
         <>
-            <div className='links'>
-                <div className='homeLink'>
-                    <Link to = "/">Home</Link>
-
-
-                </div>
-                <div className='nextLinks'>
-                    <Link to="/products">Products</Link>
-                    <Link to = "/about">About</Link>
-                    <Link to = "/cart">Cart</Link>
-
-                </div>
           
-            </div>
+            <Nav showHomeText = {false}/>
             <div className="product-catalogue">
                 <ul className="product-list">
                     {products.map((product) => (
@@ -63,7 +54,7 @@ const ProductCatalogue = () => {
                                 <div className="bottom">
                                     <p>${product.price}</p>
 
-                                    <button>
+                                    <button onClick={() => addToCart(product)} className="add-to-cart">
                                         <span>Add to Cart</span>
                                     </button>
                                     

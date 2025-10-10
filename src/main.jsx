@@ -4,6 +4,8 @@ import {createBrowserRouter, RouterProvider} from 'react-router'
 import Nav from './App.jsx'
 import Error from './errorElement.jsx';
 import ProductCatalogue from "./Products"
+import Cart from './Cart.jsx';
+import {CartProvider} from './CartContext.jsx';
 
 
 const route = createBrowserRouter([
@@ -15,6 +17,10 @@ const route = createBrowserRouter([
   {
     path:"/products",
     element: <ProductCatalogue />
+  },
+  {
+    path:'/cart',
+    element:<Cart />
   }
 
 
@@ -22,6 +28,8 @@ const route = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router = {route} />
+    < CartProvider>
+      <RouterProvider router = {route} />
+    </CartProvider>
   </StrictMode>,
 )
