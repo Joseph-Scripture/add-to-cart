@@ -1,5 +1,6 @@
 import { useCart } from './CartContext.jsx';
 import './cart.css';
+// import Nav from './Nav.jsx';
 
 const Cart = () => {
   // Destructure both cartItems and removeFromCart
@@ -12,6 +13,8 @@ const Cart = () => {
   );
 
   return (
+    <>
+    {/* <Nav /> */}
     <div className="cart-container">
       <header className="cart-header">
         <h2>Shopping Cart ({cartItems.length})</h2>
@@ -96,6 +99,7 @@ const Cart = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
